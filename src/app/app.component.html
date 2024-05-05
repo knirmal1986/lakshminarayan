@@ -1,0 +1,25 @@
+<ul>
+  <li *ngFor="let mve of movies; let i = index; trackBy: trackByFn">
+    {{ i }} + "=== "+ {{ mve.title |  capitalize }} {{ mve.cast }} {{ mve.director }}
+    {{ mve.releaseDate }}
+  </li>
+</ul>
+
+<button *ngIf="isSubmitted()" class="btn btn-primary">Submit</button>
+
+<button *ngIf="false" class="btn btn-primary">Continue</button>
+
+<div *ngIf="isSubmitted; else elseBlock">
+  content to render, when the condition is true
+</div>
+
+<ng-template #elseBlock>
+  content to render, when the condition is false
+</ng-template>
+
+
+
+
+
+<p>Unformatted date : {{ toDate }}</p>
+<p>Formatted date : {{ toDate |  date:'medium' }}</p>
