@@ -7,17 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { JsonService } from './json-service';
 import { FormsModule } from '@angular/forms';
 import { CapitalizePipe } from './CapitalizePipe.pipe';
+import { TodoComponent } from './todo/todo.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CapitalizePipe
+    CapitalizePipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    
   ],
   providers: [JsonService],
   bootstrap: [AppComponent]
