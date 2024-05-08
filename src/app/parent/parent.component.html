@@ -1,0 +1,28 @@
+<p>parent works!</p>
+
+<!-- countValue variable name is userdefined -->
+<!-- property binding -->
+<app-child [countValue] = "count"
+    [fName]="firstName"  [lName]="lastName"
+    (countChanged)="countChangedFromChild($event)"></app-child>
+<!-- <button class="btn btn-primary" (click)="increment()">Increment</button>
+<button class="btn btn-primary" (click)="decrement()">Decrement</button> -->
+
+
+<h1> Child Component Data</h1>
+<pre> child to Parent commmunication count {{childCount}}</pre>
+
+
+<h1> Using local ref variable</h1>
+
+<h1>{{title}}!</h1>
+        <p> current count is {{child.countValue}} </p>
+        <button (click)="child.increment()">Increment</button>
+        <button (click)="child.decrement()">decrement</button>
+        <app-child #child></app-child>
+
+<h1> Using viewChild</h1>
+  <h1>{{title}}!</h1>
+                <p> current count is {{childComponent?.countValue}} </p>
+                <button (click)="increment()">Increment</button>
+                <button (click)="decrement()">decrement</button>

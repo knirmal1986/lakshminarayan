@@ -8,11 +8,15 @@ import { JsonService } from './json-service';
 import { FormsModule } from '@angular/forms';
 import { CapitalizePipe } from './CapitalizePipe.pipe';
 import { TodoComponent } from './todo/todo.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 @NgModule({
   declarations: [
     AppComponent,
     CapitalizePipe,
-    TodoComponent
+    TodoComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
