@@ -18,23 +18,23 @@ export class ParentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // increment(){
-  //   this.count++
-  // }
-  // decrement(){
-  //   this.count--
-  // }
+  increment(){
+    this.count++
+  }
+  decrement(){
+    this.count--
+  }
 
   countChangedFromChild(event: number){
     console.log(event);
    this.childCount++
   }
 
-    increment(){
-    this.childComponent?.increment();
-  }
-  decrement(){
-    this.childComponent?.decrement();
-  }
+  //   increment(){
+  //   this.childComponent?.increment();
+  // }
+  // decrement(){
+  //   this.childComponent?.decrement();
+  // }
 
 }

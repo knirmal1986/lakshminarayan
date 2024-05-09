@@ -1,25 +1,25 @@
-<ul>
-  <li *ngFor="let mve of movies; let i = index; trackBy: trackByFn">
-    {{ i }} + "=== "+ {{ mve.title |  capitalize }} {{ mve.cast }} {{ mve.director }}
-    {{ mve.releaseDate }}
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="parent">Parent Component</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="userForm">User Form</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<button *ngIf="isSubmitted()" class="btn btn-primary">Submit</button>
-
-<button *ngIf="false" class="btn btn-primary">Continue</button>
-
-<div *ngIf="isSubmitted; else elseBlock">
-  content to render, when the condition is true
-</div>
-
-<ng-template #elseBlock>
-  content to render, when the condition is false
-</ng-template>
-
-
-
-
-
-<p>Unformatted date : {{ toDate }}</p>
-<p>Formatted date : {{ toDate |  date:'medium' }}</p>
+  <router-outlet></router-outlet>
