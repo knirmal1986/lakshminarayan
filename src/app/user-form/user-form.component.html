@@ -1,18 +1,35 @@
 
- <form #contactForm="ngForm">
+ <form #contactForm="ngForm" novalidate>
     <p>
         <label for="firstname">First Name </label>
-        <input type="text" id="firstname" name="firstname" ngModel required>
+        <input type="text" id="firstName" name="firstName" 
+        #fname="ngModel" [(ngModel)]="contact.firstName" required 
+        minlength="10">
       </p>
+      <div *ngIf="fname.errors?.required" style="color: red;">
+        First Name is required
+     </div>
+     <div *ngIf="!fname?.valid && (fname?.dirty || fname?.touched)" style="color: red;">
+      Invalid First Name
+      </div>
+      <!-- <pre> {{fname.errors | json}}</pre> -->
       <p>
         <label for="lastname">Last Name </label>
-        <input type="text" id="lastname" name="lastname" ngModel required>
+        <input type="text" id="lastName" name="lastName" 
+        #lname="ngModel"[(ngModel)]="contact.lastName" required>
       </p>
-
+      <div *ngIf="lname.errors?.required" style="color: red;">
+        Last Name is required
+     </div>
       <p>
-        <button class="btn btn-primary" type="submit" (click)="submitForm(contactForm)" [disabled]="!contactForm.valid">Submit</button>
+        <button class="btn btn-primary" type="submit" (click)="submitForm(contactForm)" 
+        >Submit</button>
       </p>
       <p>
         <button class="btn btn-primary" type="submit" (click)="resetForm(contactForm)">Reset</button>
       </p>
+      <p>
+        <button class="btn btn-primary" type="submit" (click)="updateData()">Update</button>
+      </p>
+
  </form>
