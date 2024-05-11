@@ -17,23 +17,34 @@ export class TodoService {
   private todos: Todo[] = [];
 
   private nextId = 0;
-  mockData :Todo[]=  [ {
-    id:1,
-    value:'task 1'
-  },
-  {
-    id:2,
-    value:'task 2'
-  },
-  {
-    id:3,
-    value:'task 3'
-  }]
+  taskList: Todo[] = [ 
+    {id:0, value:'Go to gym' },
+    {id:1, value:'Go to Groceries' },
+    {id:2, value:'Go to movies' },
+  ]
   constructor() { }
 
   
   loadAll() {
     //console.log("load All called")
-   this._todo.next(this.mockData)
+   //this._todo.next(this.mockData)
+   return this.taskList;
+  }
+
+  addTaskListItem(task:string){
+    const newTask = {
+      id: this.taskList.length,
+      value:task
+    }
+    this.taskList.push(newTask);
+  }
+
+  removeTaskListItem(index: number){
+    this.taskList.splice(index,1)
+  }
+
+  updateTaskListItem(todoItem: Todo){
+    let index = this.taskList.findIndex( item =>  item.id == todoItem.id );
+    this.taskList[index]= todoItem
   }
 }

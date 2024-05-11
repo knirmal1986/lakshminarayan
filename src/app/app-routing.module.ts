@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { ParentComponent } from './parent/parent.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'parent', component: ParentComponent},
   {path:'userForm', component: UserFormComponent},
+  {path:'todo', component: TodoComponent},
 ];
 
 @NgModule({

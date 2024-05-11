@@ -1,6 +1,12 @@
 <p>todo works for service topic</p>
-<ul>
-    <li *ngFor=" let list of taskList">
+<h2> Add New Task</h2>
+<input class="form-control" [(ngModel)]="task" name="task" id="task">
+<button class="btn btn-primary pl-2 pr-2" (click)="addTask()">Add Task</button>
+<button class="btn btn-primary ml-2 mr-2" (click)="updateTaskListItem()">Update Task</button>
+<ul class="list-group ">
+    <li class="list-group-item" *ngFor=" let list of taskList; let i = index">
         {{list.id}} {{list.value}}
+        <button class="btn btn-danger" (click)="remove(i)">Remove</button>
+        <button class="btn btn-primary" (click)="update(list.id)">Update</button>
     </li>
 </ul>
