@@ -5,6 +5,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ParentComponent } from './parent/parent.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { TodoComponent } from './todo/todo.component';
+import { StudentreactivformComponent } from './studentreactivform/studentreactivform.component';
+import { HttpExampleComponent } from './http-example/http-example.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path:'parent', component: ParentComponent},
   {path:'userForm', component: UserFormComponent},
   {path:'todo', component: TodoComponent},
+  {path:'reactiveForms', component: StudentreactivformComponent},
+  {path:'httpExample', component: HttpExampleComponent},
 ];
 
 @NgModule({
