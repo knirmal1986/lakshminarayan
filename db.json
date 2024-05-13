@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": "30",
+      "name": "Google",
+      "description": "desc-1",
+      "price": 1000,
+      "quantity": 100
+    },
+    {
+      "id": "20",
+      "name": "Facebook",
+      "description": "desc-2",
+      "price": 1000,
+      "quantity": 20
+    }
+  ],
+  "productRemoved": [
+    {
+      "id": "40",
+      "name": "Flipkart",
+      "description": "desc-4",
+      "price": 1000,
+      "quantity": 40
+    },
+    {
+      "id": "50",
+      "name": "Redbull",
+      "description": "desc-1",
+      "price": 1000,
+      "quantity": 100
+    },
+    {
+      "id": "10",
+      "name": "Apple",
+      "description": "desc-1",
+      "price": 1000,
+      "quantity": 100
+    }
+  ]
+  
+}
