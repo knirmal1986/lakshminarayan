@@ -1,1 +1,9 @@
 <p>contact works!</p>
+<ul>
+   <li  *ngFor="let task of taskList">
+        {{task.value}} <button class="btn btn-primary" (click)="navigate(task.id)"> view details</button>
+        
+   </li> 
+</ul>
+
+<router-outlet></router-outlet>
