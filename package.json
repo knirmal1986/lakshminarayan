@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider &&  ng serve",
-    "build": "ng build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider &&  ng serve --proxy-config proxy.config.json",
+    "build": " set NODE_OPTIONS=--openssl-legacy-provider && ng build",
     "watch": "ng build --watch --configuration development",
     "json-server": "json-server --watch db.json --port 3000",
     "test": "set NODE_OPTIONS=--openssl-legacy-provider && ng test --watch"
-    
   },
   "private": true,
   "dependencies": {
@@ -20,6 +19,9 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngrx/core": "^1.2.0",
+    "@ngrx/store": "^12.5.1",
+    "@ngrx/store-devtools": "^12.5.1",
     "bootstrap": "^5.3.3",
     "json-server": "^1.0.0-alpha.23",
     "rxjs": "~6.6.0",

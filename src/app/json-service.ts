@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Product } from "./product";
+import { Products } from "./product";
 import { Observable } from "rxjs/internal/Observable";
 import { catchError } from 'rxjs/operators';
 
@@ -19,16 +19,16 @@ export class JsonService{
 
       constructor(private httpClient: HttpClient) { }
 
-      public addProduct(product: any): Observable<Product> {
-        return this.httpClient.post<Product>(this.apiServer + '/products/', JSON.stringify(product), 
+      public addProduct(product: any): Observable<Products> {
+        return this.httpClient.post<Products>(this.apiServer + '/products/', JSON.stringify(product), 
         this.httpOptions).pipe(
             catchError(this.errorHandler)
         )
        
       } 
 
-      public addOtherProduct(product: any): Observable<Product> {
-        return this.httpClient.post<Product>(this.apiServer + '/productRemoved/', JSON.stringify(product), 
+      public addOtherProduct(product: any): Observable<Products> {
+        return this.httpClient.post<Products>(this.apiServer + '/productRemoved/', JSON.stringify(product), 
         this.httpOptions).pipe(
             catchError(this.errorHandler)
         )
@@ -36,26 +36,26 @@ export class JsonService{
       } 
 
       public removeProduct(id: number) {
-        return this.httpClient.delete<Product>(this.apiServer + `/products/${id}`).pipe(
+        return this.httpClient.delete<Products>(this.apiServer + `/products/${id}`).pipe(
             catchError(this.errorHandler)
         )
        
       } 
       public removeOtherProduct(id: number) {
-        return this.httpClient.delete<Product>(this.apiServer + `/productRemoved/${id}`).pipe(
+        return this.httpClient.delete<Products>(this.apiServer + `/productRemoved/${id}`).pipe(
             catchError(this.errorHandler)
         )
        
       } 
-      getAll(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(this.apiServer + '/products/')
+      getAll(): Observable<Products[]> {
+        return this.httpClient.get<Products[]>(this.apiServer + '/products/')
         .pipe(
           catchError(this.errorHandler)
         )
       }
 
-      getAllOtherProdcuts(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(this.apiServer + '/productRemoved/')
+      getAllOtherProdcuts(): Observable<Products[]> {
+        return this.httpClient.get<Products[]>(this.apiServer + '/productRemoved/')
         .pipe(
           catchError(this.errorHandler)
         )
